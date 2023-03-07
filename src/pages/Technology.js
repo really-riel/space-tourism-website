@@ -4,6 +4,7 @@ import { useStoreActions, useStoreState } from "easy-peasy";
 import data from "../db/data.json";
 import TechNavBtn from "./TechNavBtn";
 import useWindowSize from "../hooks/useWindowSize";
+import { useState, useEffect } from "react";
 
 const Technology = () => {
   const technology = data.technology;
@@ -12,6 +13,11 @@ const Technology = () => {
     (actions) => actions.setDataTypeIndex
   );
   const { width } = useWindowSize();
+  const [isIndexAvailable, setIsIndexAvailable] = useState(false);
+
+  useEffect(() => {
+    if (dataTypeIndex < 3) setIsIndexAvailable(true);
+  }, [dataTypeIndex]);
 
   return (
     <main className="Technology">
@@ -42,11 +48,13 @@ const Technology = () => {
         )}
       </Carousel>
 
-      <article>
-        <p className="heading">THE TERMINOLOGY...</p>
-        <h1>{technology[dataTypeIndex].name.toUpperCase()}</h1>
-        <p className="desc">{technology[dataTypeIndex].description}</p>
-      </article>
+      {isIndexAvailable && (
+        <article>
+          <p className="heading">THE TERMINOLOGY...</p>
+          <h1>{technology[dataTypeIndex].name.toUpperCase()}</h1>
+          <p className="desc">{technology[dataTypeIndex].description}</p>
+        </article>
+      )}
     </main>
   );
 };

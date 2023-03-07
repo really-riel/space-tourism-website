@@ -2,21 +2,14 @@ import React from "react";
 import data from "../db/data.json";
 import Carousel from "react-elastic-carousel";
 import { useStoreState, useStoreActions } from "easy-peasy";
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 const Crew = () => {
   const Crews = data.crew;
-  const { pathname } = useLocation();
 
   const dataTypeIndex = useStoreState((state) => state.dataTypeIndex);
   const setDataTypeIndex = useStoreActions(
     (actions) => actions.setDataTypeIndex
   );
-
-  useEffect(() => {
-    setDataTypeIndex(0);
-  }, [pathname]);
 
   return (
     <main className="Crew">

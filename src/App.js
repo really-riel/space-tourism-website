@@ -5,8 +5,20 @@ import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
 import Missing from "./pages/Missing";
 import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useStoreActions } from "easy-peasy";
 
 function App() {
+  const setDataTypeIndex = useStoreActions(
+    (actions) => actions.setDataTypeIndex
+  );
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setDataTypeIndex(0);
+  }, [pathname, setDataTypeIndex]);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
