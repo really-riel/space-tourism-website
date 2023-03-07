@@ -1,4 +1,4 @@
-import { createStore, action, thunk, computed } from "easy-peasy";
+import { createStore, action } from "easy-peasy";
 
 export default createStore({
   isNavBtnClicked: false,
