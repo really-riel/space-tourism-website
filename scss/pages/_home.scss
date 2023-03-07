@@ -55,8 +55,9 @@
       width: 12rem;
       height: 12rem;
       border-radius: 50%;
-      font-size: clamp(1.2rem, 1rem + 2vw, 3rem);
+      font-size: clamp(1.2rem, 1rem + 2vw, 2.4rem);
       letter-spacing: 0.2rem;
+      cursor: pointer;
 
       @include mq(768px) {
         width: 14rem;
@@ -67,6 +68,10 @@
         width: 12.5rem;
         height: 12.5rem;
       }
+    }
+    button:hover {
+      background-color: rgb(2, 14, 46);
+      color: whitesmoke;
     }
   }
 }
