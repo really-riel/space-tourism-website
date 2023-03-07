@@ -1,11 +1,4 @@
 @use "../abstracts" as *;
-.active {
-  text-decoration: underline;
-  text-decoration-thickness: 0.3rem;
-  @include mq(768px) {
-    text-decoration: none;
-  }
-}
 
 .selected {
   border-bottom: 0.2rem solid whitesmoke;

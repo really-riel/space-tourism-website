@@ -28,13 +28,18 @@ const Technology = () => {
           )
         }
       >
-        {technology.map((tech, index) => (
-          <img
-            key={index}
-            src={width > 1024 ? tech.images.portrait : tech.images.landscape}
-            alt={tech.name}
-          />
-        ))}
+        {technology.map(
+          (tech, index) =>
+            tech && (
+              <img
+                key={index}
+                src={
+                  width > 1024 ? tech.images.portrait : tech.images.landscape
+                }
+                alt={tech.name}
+              />
+            )
+        )}
       </Carousel>
 
       <article>
