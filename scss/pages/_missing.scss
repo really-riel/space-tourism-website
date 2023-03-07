@@ -1,0 +1,11 @@
+.Missing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  a {
+    flex-grow: 1;
+    color: #f24e4e;
+    font-size: 2rem;
+  }
+}

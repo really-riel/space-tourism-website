@@ -1,0 +1,14 @@
+.rec-carousel-wrapper {
+  .rec-dot_active {
+    background-color: whitesmoke;
+  }
+  .rec-dot {
+    box-shadow: none;
+    border: 0.1rem solid whitesmoke;
+    width: 1rem;
+    height: 1rem;
+  }
+  .rec-arrow {
+    display: none;
+  }
+}

@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+.Home {
+  @include mq(768px) {
+    width: 80%;
+    margin: auto;
+  }
+  @include mq(1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  section:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    @include mq(1024px) {
+      text-align: left;
+    }
+    p {
+      opacity: 0.8;
+    }
+    p:first-child {
+      letter-spacing: 0.2rem;
+    }
+
+    h1 {
+      margin: 1rem 0;
+      font-size: clamp(5rem, 1vh, 7rem);
+      font-weight: 200;
+      font-family: "Times New Roman", Times, serif;
+      @include mq(768px) {
+        font-size: clamp(7rem, 1vh, 9rem);
+      }
+    }
+
+    p:last-child {
+      line-height: 1.7;
+    }
+  }
+  section:last-child {
+    margin-top: 4rem;
+    display: grid;
+    place-content: center;
+    @include mq(1024px) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    button {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      font-size: clamp(1.2rem, 1rem + 1.5vw, 3rem);
+      letter-spacing: 0.2rem;
+
+      @include mq(768px) {
+        width: 14rem;
+        height: 14rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

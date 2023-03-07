@@ -1,0 +1,85 @@
+@use "../abstracts" as *;
+.Crew {
+  text-align: center;
+
+  @include mq(768px) {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include mq(1024px) {
+    width: 80%;
+    margin: 0 auto;
+    grid-template-areas:
+      "in pic "
+      ".   pic "
+      "art pic "
+      ". pic "
+      ". pic";
+    grid-template-columns: 50% 50%;
+    text-align: left;
+  }
+
+  p {
+    opacity: 0.8;
+  }
+  .intro {
+    letter-spacing: 0.2rem;
+    margin-bottom: 3rem;
+    @include mq(1024px) {
+      grid-area: in;
+    }
+  }
+  .rec-carousel-wrapper {
+    position: relative;
+    @include mq(1024px) {
+      grid-area: pic;
+    }
+    img {
+      height: 20rem;
+
+      @include mq(768px) {
+        height: 25rem;
+      }
+      @include mq(1024px) {
+        height: 28rem;
+        margin-top: 3rem;
+        margin-left: 3rem;
+      }
+    }
+    .rec-pagination {
+      @include mq(1024px) {
+        position: absolute;
+        left: -100%;
+        bottom: 8%;
+      }
+    }
+  }
+  article {
+    margin: 1rem 0 2rem;
+    @include mq(1024px) {
+      grid-area: art;
+      p {
+        opacity: 0.7;
+      }
+    }
+    .role {
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      font-weight: 200;
+      margin-bottom: 2rem;
+      font-size: clamp(1rem, 1rem + 3vw, 4rem);
+    }
+    .bio {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      @include mq(768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+
+  @include mq(768px) {
+    padding: 0;
+    padding-bottom: 1.5rem;
+
+    .logo {
+      padding: 1rem 1.5rem;
+    }
+  }
+  @include mq(1024px) {
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,91 @@
+@use "../abstracts" as *;
+.navSection {
+  color: whitesmoke;
+
+  .hamburger {
+    @include mq(768px) {
+      display: none;
+    }
+  }
+  .navBar {
+    display: none;
+    position: relative;
+
+    @include mq(768px) {
+      background-color: #d3d1d134;
+
+      display: flex;
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 1.5rem;
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+      li {
+        padding: 1.5rem 0;
+      }
+    }
+    @include mq(1024px) {
+      padding: 0 6rem 0 4rem;
+    }
+
+    hr {
+      display: none;
+      @include mq(1024px) {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 95%;
+        width: 23rem;
+        background-color: rgba(245, 245, 245, 0.667);
+        opacity: 0.3;
+        border-width: 0.1px;
+      }
+    }
+    @include mq(1024px) {
+      ul {
+        gap: 2rem;
+      }
+    }
+  }
+}
+
+.dropBar {
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.944);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  padding: 3rem 1.5rem 0;
+  z-index: 1;
+  li.selected {
+    border-bottom: none;
+  }
+
+  @include mq(768px) {
+    display: none;
+  }
+
+  figure {
+    width: 100%;
+    text-align: right;
+  }
+  ul {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+ul li {
+  list-style-type: none;
+}
+ul a {
+  color: white;
+  text-decoration: none;
+}

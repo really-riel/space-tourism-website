@@ -1,0 +1,103 @@
+@use "../abstracts" as *;
+
+.Technology {
+  position: relative;
+  padding: 0;
+  text-align: center;
+  @include mq(1024px) {
+    padding-left: 6rem;
+    grid-template-areas:
+      "in in pic"
+      ". art pic"
+      ". art pic"
+      ". . pic";
+    grid-template-columns: 10% repeat(2, 45%);
+  }
+  .intro {
+    letter-spacing: 0.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    font-size: clamp(1rem, 1rem + 1vw, 2rem);
+    @include mq(1024px) {
+      grid-area: in;
+      text-align: left;
+    }
+  }
+
+  .rec-carousel-wrapper {
+    @include mq(1024px) {
+      grid-area: pic;
+      margin-top: 4rem;
+    }
+    .rec-slider-container {
+      margin: 0;
+    }
+    img {
+      width: 100%;
+      @include mq(1024px) {
+        height: 60vh;
+      }
+    }
+  }
+  .techNavBtn {
+    width: 80%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    @include mq(1024px) {
+      position: absolute;
+      flex-direction: column;
+      left: 6%;
+      width: auto;
+      gap: 2.5rem;
+    }
+
+    button {
+      background-color: transparent;
+      color: whitesmoke;
+      font-size: clamp(1rem, 1rem + 4vw, 2.5rem);
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      border: 0.2rem solid #333;
+      cursor: pointer;
+      @include mq(768px) {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+    .selected {
+      background-color: whitesmoke;
+      color: #000;
+    }
+  }
+
+  article {
+    @include mq(1024px) {
+      grid-area: art;
+      text-align: left;
+      width: 80%;
+    }
+    .heading {
+      opacity: 0.8;
+    }
+    h1 {
+      margin-top: 1rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-weight: 200;
+      font-size: clamp(2rem, 1rem + 4vw, 4rem);
+      @include mq(1024px) {
+        font-size: clamp(2rem, 1rem + 2vw, 3rem);
+      }
+    }
+    .desc {
+      margin-top: 2rem;
+      font-size: clamp(0.9rem, 1rem + 0.5vw, 1.5rem);
+      opacity: 0.8;
+      line-height: 1.6rem;
+    }
+  }
+}

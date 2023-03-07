@@ -1,0 +1,113 @@
+@use "../abstracts" as *;
+.Destination {
+  text-align: center;
+  @include mq(1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  p {
+    opacity: 0.8;
+    @include mq(768px) {
+      font-size: 1.5rem;
+    }
+  }
+  section {
+    p:first-child {
+      letter-spacing: 0.2rem;
+    }
+    figure {
+      margin: 1.5rem auto;
+      @include mq(768px) {
+        margin: 2rem auto;
+      }
+      @include mq(1024px) {
+        margin: 3rem auto;
+      }
+
+      img {
+        width: 15rem;
+        height: 15rem;
+
+        @include mq(768px) {
+          width: 17rem;
+          height: 17rem;
+        }
+        @include mq(1024px) {
+          margin-top: 2rem;
+          width: 20rem;
+          height: 20rem;
+        }
+      }
+    }
+  }
+
+  article {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    @include mq(1024px) {
+      width: 80%;
+      text-align: left;
+      align-items: flex-start;
+
+      .distanceTravelWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    ul {
+      opacity: 0.8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style-type: none;
+      width: 80%;
+
+      @include mq(768px) {
+        li {
+          padding-bottom: 0.5rem;
+        }
+      }
+      @include mq(1024px) {
+        width: 60%;
+        cursor: pointer;
+      }
+    }
+    h1 {
+      margin: 2rem 0;
+      font-size: clamp(5rem, 1rem + 2vw, 7rem);
+      font-weight: 200;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .description {
+      text-align: center;
+      line-height: 1.6;
+      font-size: 0.9rem;
+      @include mq(768px) {
+        font-size: 1rem;
+      }
+      @include mq(1024px) {
+        text-align: left;
+      }
+    }
+    hr {
+      margin: 2rem 0;
+      width: 100%;
+      opacity: 0.5;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 200;
+      font-family: "Times New Roman", Times, serif;
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+
+.home {
+  background-image: url(../shared/home/background-home-mobile.jpg);
+  @include mq(768px) {
+    background-image: url(../shared/home/background-home-tablet.jpg);
+  }
+  @include mq(1024px) {
+    background-image: url(../shared/home/background-home-desktop.jpg);
+  }
+}
+
+.destination {
+  background-image: url(../shared/destination/background-destination-mobile.jpg);
+  @include mq(768px) {
+    background-image: url(../shared/destination/background-destination-tablet.jpg);
+  }
+  @include mq(1024px) {
+    background-image: url(../shared/destination/background-destination-desktop.jpg);
+  }
+}
+
+.crew {
+  background-image: url(../shared/crew/background-crew-mobile.jpg);
+  @include mq(768px) {
+    background-image: url(../shared/crew/background-crew-tablet.jpg);
+  }
+  @include mq(1024px) {
+    background-image: url(../shared/crew/background-crew-desktop.jpg);
+  }
+}
+.technology {
+  background-image: url(../shared/technology/background-technology-mobile.jpg);
+  @include mq(768px) {
+    background-image: url(../shared/technology/background-technology-tablet.jpg);
+  }
+  @include mq(1024px) {
+    background-image: url(../shared/technology/background-technology-desktop.jpg);
+  }
+}
