@@ -1,5 +1,6 @@
 @use "../abstracts" as *;
 .Home {
+  overflow-y: auto;
   @include mq(768px) {
     width: 80%;
     margin: auto;
